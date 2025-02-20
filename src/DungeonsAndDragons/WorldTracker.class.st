@@ -17,7 +17,7 @@ WorldTracker >> handleGetRequest: req [
 WorldTracker >> initialize [
 dataStore := Dictionary new.
 	server := (Teapot configure: {#port -> 4000})
-			GET: '/hello' -> [ :req | 'Hello Faerun' ];
+			GET: '/hello' -> [ :req | self handleGetRequest: req ];
 			"POST: '/data' -> [:req| "
 	start
 ]
